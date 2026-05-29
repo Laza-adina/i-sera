@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue | I-Sera Madagascar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Roboto:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="catalogue.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">I-SERA MADAGASCAR</a>
+          <!-- Bouton hamburger -->
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html" style="color: var(--secondary-color);">Catalogue</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="catalogue-header fade-up">
+        <h1>Notre Collection</h1>
+        <p>Découvrez nos véhicules d'exception, soigneusement sélectionnés pour vous.</p>
+        <div class="filters">
+            <button class="filter-btn active">Tous</button>
+            <button class="filter-btn">Voitures</button>
+            <button class="filter-btn">Motos</button>
+        </div>
+    </header>
+
+    <main class="catalogue-container">
+        
+        <article class="card fade-up">
+            <div class="card-img" style="background-image: url('https://res.cloudinary.com/dcmnototc/image/upload/v1780077729/bmw1_dao8ye.jpg');">
+                <span class="badge">Berline</span>
+            </div>
+            <div class="card-content">
+                <h2>BMW 320d</h2>
+                <ul class="specs">
+                    <li><strong>Année :</strong> 2020</li>
+                    <li><strong>Moteur :</strong> 2.0L Diesel</li>
+                </ul>
+                <div class="card-footer">
+                    <span class="price">Sur demande</span>
+                    <button class="btn-sm btn-details" 
+                        data-title="BMW 320d M Sport"
+                        data-img1="https://res.cloudinary.com/dcmnototc/image/upload/v1780077729/bmw1_dao8ye.jpg"
+                        data-img2="https://res.cloudinary.com/dcmnototc/image/upload/v1780077728/bmw2_vhe5qt.jpg"
+                        data-img3="https://res.cloudinary.com/dcmnototc/image/upload/v1780077729/bmw3_fyev6m.jpg"
+                        data-specs="Année: 2020|Moteur: 2.0L Diesel (190 ch)|Transmission: Automatique 8 rapports|Kilométrage: 45 000 km|Intérieur: Cuir Noir|Options: Toit ouvrant, Caméra de recul">
+                        Voir Détails
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="card fade-up" style="transition-delay: 0.1s;">
+            <div class="card-img" style="background-image: url('https://res.cloudinary.com/dcmnototc/image/upload/v1780078457/erkka-wessman-nKhJCl4AgPU-unsplash_jswckz.jpg');">
+                <span class="badge">Sportive</span>
+            </div>
+            <div class="card-content">
+                <h2>YAMAHA R1</h2>
+                <ul class="specs">
+                    <li><strong>Année :</strong> 2021</li>
+                    <li><strong>Moteur :</strong> 998 cc</li>
+                </ul>
+                <div class="card-footer">
+                    <span class="price">Sur demande</span>
+                    <button class="btn-sm btn-details" 
+                        data-title="Yamaha YZF-R1"
+                        data-img1="https://res.cloudinary.com/dcmnototc/image/upload/v1780078457/erkka-wessman-nKhJCl4AgPU-unsplash_jswckz.jpg"
+                        data-img2="https://res.cloudinary.com/dcmnototc/image/upload/v1780078443/kirill-petropavlov-Wbtuuty_dHo-unsplash_mpxdgv.jpg"
+                        data-img3="https://res.cloudinary.com/dcmnototc/image/upload/v1780078436/ashith-mathew-fpz6GmnpK8U-unsplash_qdk9b3.jpg"
+                        data-specs="Année: 2021|Moteur: 998 cc (200 ch)|Poids: 201 kg (tous pleins faits)|Kilométrage: 8 500 km|Échappement: Akrapovic|Électronique: Shifter Up/Down, ABS d'angle">
+                        Voir Détails
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <article class="card fade-up" style="transition-delay: 0.2s;">
+            <div class="card-img" style="background-image: url('https://res.cloudinary.com/dcmnototc/image/upload/v1780077729/kawasaki4_dcickl.jpg');">
+                <span class="badge">Roadster</span>
+            </div>
+            <div class="card-content">
+                <h2>Kawasaki Z1000</h2>
+                <ul class="specs">
+                    <li><strong>Année :</strong> 2018</li>
+                    <li><strong>Moteur :</strong> 1043 cc</li>
+                </ul>
+                <div class="card-footer">
+                    <span class="price">Sur demande</span>
+                    <button class="btn-sm btn-details" 
+                        data-title="Kawasaki Z1000"
+                        data-img1="https://res.cloudinary.com/dcmnototc/image/upload/v1780077729/kawasaki4_dcickl.jpg"
+                        data-img2="https://res.cloudinary.com/dcmnototc/image/upload/v1780077729/kawasaki1_mk3fm0.jpg"
+                        data-img3="https://res.cloudinary.com/dcmnototc/image/upload/v1780078532/mohammad-reza-m49jX0OD3ww-unsplash_jebn7d.jpg"
+                        data-specs="Année: 2018|Moteur: 1043 cc (142 ch)|Style: Sugomi Aggressif|Kilométrage: 12 300 km|Freinage: Disques pétales|État: Entretien à jour, pneus neufs">
+                        Voir Détails
+                    </button>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-grid">
+                <div class="modal-gallery">
+                    <img id="modal-main-img" src="" alt="Image Principale" class="main-img">
+                    <div class="modal-thumbnails">
+                        <img id="modal-thumb-1" src="" alt="Détail 1" class="thumb">
+                        <img id="modal-thumb-2" src="" alt="Détail 2" class="thumb">
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-title">Titre du Véhicule</h2>
+                    <ul id="modal-specs-list" class="specs modal-specs-list">
+                        </ul>
+                    <a href="contact.html" class="btn" style="margin-top: 30px; width: 100%; text-align: center;">Prendre rendez-vous</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div>&copy; 2026 I-Sera Madagascar. Tous droits réservés.</div>
+        <div><a href="#">CGU</a> <a href="#">Mentions Légales</a></div>
+    </footer>
+
+    <script src="animations.js"></script>
+</body>
+</html>

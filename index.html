@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>I-Sera Madagascar | Vente et Location d'Occasion</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Roboto:wght@700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">I-SERA MADAGASCAR</a>
+
+          <!-- Bouton hamburger -->
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero fade-up">
+        <div>
+            <h1>Louez et vivez à fond !!</h1>
+            <p style="font-size: 1.2rem; font-weight: 300; margin-bottom: 30px;">L'excellence mécanique  à louer ou à acheter.</p>
+            <a href="catalogue.html" class="btn">Découvrir le catalogue</a>
+        </div>
+    </header>
+
+    <section class="carousel">
+        
+        <!-- SLIDE 1 : BMW 320d -->
+        <div class="slide active">
+            <video autoplay loop muted playsinline class="bg-video">
+                <source src="https://res.cloudinary.com/dcmnototc/video/upload/v1780077738/BMW_320D_XDRIVE_-_Short_Film.4K_2020_kgg7fr.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            
+            <div class="slide-content">
+                <span class="slide-badge">Voiture sportive</span>
+                <h1 class="slide-title">BMW 320d</h1>
+                <a href="catalogue.html" class="slide-link">Voir ></a>
+            </div>
+        </div>
+
+        <!-- SLIDE 2 : YAMAHA R1 -->
+        <div class="slide">
+            <video autoplay loop muted playsinline class="bg-video">
+                <source src="https://res.cloudinary.com/dcmnototc/video/upload/v1780077748/Yamaha_R1_Cinematic_Dallas_Texas_Sony_A7IV_herygm.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+
+            <div class="slide-content">
+                <span class="slide-badge">Moto sportive</span>
+                <h1 class="slide-title">Yamaha R1</h1>
+                <a href="catalogue.html" class="slide-link">Voir ></a>
+            </div>
+        </div>
+
+        <!-- SLIDE 3 : KAWASAKI Z1000 -->
+        <div class="slide">
+            <video autoplay loop muted playsinline class="bg-video">
+                <source src="https://res.cloudinary.com/dcmnototc/video/upload/v1780077737/Kawasaki_Z1100._The_next_chapter_of_the_Z_legacy._cufoaz.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+
+            <div class="slide-content">
+                <span class="slide-badge">Roadster</span>
+                <h1 class="slide-title">Kawasaki Z1000</h1>
+                <a href="catalogue.html" class="slide-link">Voir ></a>
+            </div>
+        </div>
+        
+    </section>
+    
+
+    <section class="section">
+        <div style="text-align: center;">
+            <h2 class="section-title fade-up">C'est une passion que je veux partager</h2>
+            <p class="fade-up" style="max-width: 800px; margin: 0 auto 50px auto; color: var(--text-muted); line-height: 1.6;">
+                Plus qu'un simple moyen de transport, chaque véhicule raconte une histoire de puissance, de design et de liberté. 
+            </p>
+        </div>
+        <div class="passion-grid">
+            <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=800&auto=format&fit=crop" alt="Moto" class="fade-up">
+            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=800&auto=format&fit=crop" alt="Intérieur Voiture" class="fade-up" style="transition-delay: 0.2s;">
+            <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?q=80&w=800&auto=format&fit=crop" alt="Voiture de sport" class="fade-up" style="transition-delay: 0.4s;">
+        </div>
+    </section>
+
+    <section class="cta-section fade-up">
+        <h2 style="font-family: 'Roboto'; font-size: 2rem; margin-bottom: 20px;">Prêt à prendre le volant ?</h2>
+        <p style="margin-bottom: 40px; color: var(--text-muted);">Des véhicules de gammes à votre disposition, à louer ou à acheter.</p>
+        <a href="catalogue.html" class="btn">voir notre catalogue</a>
+    </section>
+
+    <footer class="footer">
+        <div>&copy; 2026 DR. Motors. Tous droits réservés.</div>
+        <div>
+            <a href="#">CGU</a>
+            <a href="#">Mentions Légales</a>
+            <a href="#">Infos</a>
+        </div>
+    </footer>
+
+    <script src="animations.js"></script>
+</body>
+</html>

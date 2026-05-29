@@ -1,0 +1,273 @@
+/* --- MISE EN PAGE PRINCIPALE --- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none; /* supprime la ligne bleue */
+}
+.section { 
+  padding: 80px 10%; 
+}
+
+.cta-section { 
+  padding: 80px 10%; 
+}
+section, header, footer, nav {
+  display: block;
+  margin: 0;
+  padding-top: 0;
+}
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  padding: 180px 10% 100px 10%; /* Padding top important pour passer sous la navbar fixe */
+  min-height: calc(100vh - 80px); /* Hauteur minimale moins le footer */
+}
+
+.contact-info, .contact-form-wrapper {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* --- TEXTES ET INFORMATIONS --- */
+.contact-info h1 {
+  font-size: 3.5rem;
+  margin-bottom: 25px;
+  line-height: 1.1;
+}
+
+.contact-info p {
+  color: var(--text-muted);
+  margin-bottom: 50px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 300;
+  max-width: 450px;
+}
+
+/* --- BOUTONS RÉSEAUX SOCIAUX --- */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.social-btn {
+  display: inline-block;
+  padding: 15px 35px;
+  border: 1px solid var(--secondary-color);
+  color: var(--text-light);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.social-btn:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+/* --- FORMULAIRE --- */
+.form-group {
+  margin-bottom: 30px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 12px;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  padding: 18px;
+  background: rgba(88, 88, 88, 0.05);
+  border: 1px solid rgba(88, 88, 88, 0.3);
+  color: var(--text-light);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--text-light);
+  background: rgba(88, 88, 88, 0.1);
+}
+
+.form-group input::placeholder, 
+.form-group textarea::placeholder {
+  color: rgba(176, 176, 176, 0.4);
+}
+
+.contact-form-wrapper .btn {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 140px 5% 80px 5%;
+  }
+  .contact-info h1 {
+    font-size: 2.5rem;
+  }
+}
+/* ============================================
+   RESPONSIVE CONTACT
+   ============================================ */
+
+   @media (max-width: 1024px) {
+    .contact-container {
+      padding: 150px 7% 80px 7%;
+      gap: 40px;
+    }
+  
+    .contact-info h1 {
+      font-size: 2.8rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      padding: 120px 5% 60px 5%;
+      gap: 50px;
+    }
+  
+    .contact-info, .contact-form-wrapper {
+      min-width: unset;
+      width: 100%;
+    }
+  
+    .contact-info h1 {
+      font-size: 2.2rem;
+    }
+  
+    .contact-info p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      max-width: 100%;
+    }
+  
+    .social-links {
+      gap: 12px;
+    }
+  
+    .social-btn {
+      padding: 12px 25px;
+      font-size: 0.8rem;
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      padding: 14px;
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-container {
+      padding: 100px 5% 50px 5%;
+    }
+  
+    .contact-info h1 {
+      font-size: 1.8rem;
+    }
+  
+    .social-links {
+      flex-direction: column;
+    }
+  
+    .social-btn {
+      text-align: center;
+      width: 100%;
+    }
+  
+    .contact-form-wrapper .btn {
+      font-size: 0.8rem;
+      padding: 14px;
+    }
+  }
+/* --- HAMBURGER --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  padding: 0;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-light);
+  transition: all 0.4s ease;
+  transform-origin: center;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+
+  .hamburger {
+      display: flex; /* ← C'était "none" ici, c'est le bug */
+  }
+
+  .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      background: rgba(5, 28, 36, 0.98);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      z-index: 999;
+      border-left: 1px solid rgba(88, 88, 88, 0.2);
+  }
+
+  .nav-links.open {
+      right: 0;
+  }
+
+  .nav-links a {
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+  }
+}

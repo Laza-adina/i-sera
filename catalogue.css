@@ -1,0 +1,499 @@
+/* --- EN-TÊTE DU CATALOGUE --- */
+.catalogue-header {
+  padding: 160px 10% 60px 10%;
+  text-align: center;
+}
+
+.catalogue-header h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.catalogue-header p {
+  color: var(--text-muted);
+  font-weight: 300;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+/* FILTRES */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid rgba(88, 88, 88, 0.3);
+  padding: 10px 25px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover, .filter-btn.active {
+  color: var(--text-light);
+  border-color: var(--text-light);
+}
+
+/* --- GRILLE DES VÉHICULES --- */
+.catalogue-container {
+  padding: 0 10% 100px 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+/* --- CARTE VÉHICULE --- */
+.card {
+  background: rgba(88, 88, 88, 0.05);
+  border: 1px solid rgba(88, 88, 88, 0.2);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--secondary-color);
+  transform: translateY(-5px);
+}
+
+.card-img {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--primary-color);
+  color: var(--text-light);
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-content h2 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.specs {
+  list-style: none;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.specs li {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-weight: 300;
+}
+
+.specs li strong {
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* PIED DE CARTE (Prix & Bouton) */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(88, 88, 88, 0.2);
+  padding-top: 20px;
+}
+
+.price {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.btn-sm {
+  background: var(--secondary-color);
+  color: var(--text-light);
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  padding: 10px 20px;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.btn-sm:hover {
+  background: var(--text-light);
+  color: var(--primary-color);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .catalogue-header {
+    padding: 120px 5% 40px 5%;
+  }
+  .catalogue-container {
+    padding: 0 5% 80px 5%;
+    grid-template-columns: 1fr;
+  }
+}
+/* --- POP-UP (MODAL) CORRIGÉ --- */
+.modal {
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 17, 22, 0.9); /* Fond sombre semi-transparent */
+  backdrop-filter: blur(5px);
+  
+  /* On le passe en flex direct pour le centrage, mais on le rend invisible */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Gestion de la visibilité pour l'animation */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; /* Devient cliquable */
+}
+
+.modal-content {
+  background-color: #0d1f23; /* Remplace par ta variable var(--primary-color) si besoin */
+  border: 1px solid var(--secondary-color);
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 40px;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: var(--text-muted);
+  font-size: 2rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 10;
+}
+
+.close-modal:hover {
+  color: var(--text-light);
+}
+
+/* Grille Interne du Pop-up */
+.modal-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+}
+
+/* Galerie d'images */
+.modal-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.main-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border: 1px solid rgba(88, 88, 88, 0.2);
+}
+
+.modal-thumbnails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.thumb {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid rgba(88, 88, 88, 0.2);
+  cursor: pointer;
+  transition: var(--transition);
+  filter: grayscale(40%);
+}
+
+.thumb:hover {
+  filter: grayscale(0%);
+  border-color: var(--text-light);
+}
+
+/* Infos et Caractéristiques */
+.modal-info h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(88, 88, 88, 0.3);
+  padding-bottom: 15px;
+}
+
+.modal-specs-list {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-specs-list li {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed rgba(88, 88, 88, 0.2);
+  color: var(--text-muted);
+}
+
+.modal-specs-list li strong {
+  color: var(--text-light);
+}
+
+/* Responsive Modal */
+@media (max-width: 850px) {
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-content {
+    padding: 25px;
+  }
+  .main-img {
+    height: 250px;
+  }
+}
+/* ============================================
+   RESPONSIVE CATALOGUE
+   ============================================ */
+
+   @media (max-width: 1024px) {
+    .catalogue-container {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 7% 80px 7%;
+    }
+  
+    .catalogue-header {
+      padding: 130px 7% 50px 7%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .catalogue-header {
+      padding: 100px 5% 40px 5%;
+    }
+  
+    .catalogue-header h1 {
+      font-size: 2rem;
+    }
+  
+    .filters {
+      gap: 10px;
+    }
+  
+    .filter-btn {
+      padding: 8px 18px;
+      font-size: 0.75rem;
+    }
+  
+    .catalogue-container {
+      grid-template-columns: 1fr;
+      padding: 0 5% 60px 5%;
+      gap: 25px;
+    }
+  
+    .card-img {
+      height: 200px;
+    }
+  
+    /* MODAL responsive */
+    .modal-content {
+      padding: 20px;
+      width: 95%;
+      max-height: 95vh;
+    }
+  
+    .modal-grid {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+  
+    .main-img {
+      height: 220px;
+    }
+  
+    .thumb {
+      height: 100px;
+    }
+  
+    .modal-info h2 {
+      font-size: 1.5rem;
+    }
+  
+    .close-modal {
+      top: 10px;
+      right: 15px;
+      font-size: 1.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .catalogue-header h1 {
+      font-size: 1.6rem;
+    }
+  
+    .card-content h2 {
+      font-size: 1.2rem;
+    }
+  
+    .price {
+      font-size: 0.95rem;
+    }
+  
+    .modal-thumbnails {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  /* --- HAMBURGER --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-light);
+  transition: all 0.4s ease;
+  transform-origin: center;
+}
+
+/* Animation croix quand ouvert */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* --- HAMBURGER --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  padding: 0;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-light);
+  transition: all 0.4s ease;
+  transform-origin: center;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+
+  .hamburger {
+      display: flex; /* ← C'était "none" ici, c'est le bug */
+  }
+
+  .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      background: rgba(5, 28, 36, 0.98);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      z-index: 999;
+      border-left: 1px solid rgba(88, 88, 88, 0.2);
+  }
+
+  .nav-links.open {
+      right: 0;
+  }
+
+  .nav-links a {
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+  }
+}

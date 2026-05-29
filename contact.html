@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | I-Sera Madagascar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Roboto:wght@700;900&display=swap" rel="stylesheet">
+    
+    <!-- Lien vers les styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    
+    <!-- Script EmailJS (À configurer avec ta clé publique) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // emailjs.init("VOTRE_PUBLIC_KEY");
+        })();
+    </script>
+</head>
+<body>
+
+    <!-- NAVBAR FIXE -->
+    <nav class="navbar">
+        <a href="index.html" class="brand">I-SERA MADAGASCAR</a>
+          <!-- Bouton hamburger -->
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- SECTION CONTACT -->
+    <main class="contact-container">
+        
+        <!-- Informations et Réseaux Sociaux -->
+        <div class="contact-info fade-up">
+            <h1>Contactez-nous</h1>
+            <p>Une question sur une location ? Un projet d'achat ? Discutons de votre passion et trouvons le véhicule d'occasion qu'il vous faut.</p>
+            
+            <div class="social-links">
+                <!-- Remplace par tes vrais liens -->
+                <a href="https://wa.me/VOTRE_NUMERO" target="_blank" class="social-btn">WhatsApp</a>
+                <a href="https://facebook.com/VOTRE_PAGE" target="_blank" class="social-btn">Facebook</a>
+            </div>
+        </div>
+
+        <!-- Formulaire de Contact -->
+        <div class="contact-form-wrapper fade-up" style="transition-delay: 0.2s;">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom / Prénom</label>
+                    <input type="text" id="name" name="user_name" placeholder="Entrez votre nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Adresse Email</label>
+                    <input type="email" id="email" name="user_email" placeholder="votre@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Votre Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
+                </div>
+                <button type="submit" class="btn">Envoyer le message</button>
+            </form>
+        </div>
+
+    </main>
+
+    <!-- FOOTER STANDARD -->
+    <footer class="footer">
+        <div>&copy; 2026 I-Sera Madagascar. Tous droits réservés.</div>
+        <div>
+            <a href="#">CGU</a>
+            <a href="#">Mentions Légales</a>
+            <a href="#">Infos</a>
+        </div>
+    </footer>
+
+    <!-- LOGIQUE DES ANIMATIONS ET DE L'ENVOI D'EMAIL -->
+    <script src="animations.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Code à décommenter lorsque tes clés EmailJS seront prêtes :
+            /*
+            emailjs.sendForm('VOTRE_SERVICE_ID', 'VOTRE_TEMPLATE_ID', this)
+                .then(function() {
+                    alert('Votre message a bien été envoyé ! Nous vous répondrons très vite.');
+                }, function(error) {
+                    alert('Erreur lors de l\'envoi : ' + JSON.stringify(error));
+                });
+            */
+            
+            // Alerte de test (à supprimer une fois EmailJS configuré)
+            alert("Formulaire fonctionnel ! Prêt à être connecté à EmailJS.");
+        });
+    </script>
+</body>
+</html>
